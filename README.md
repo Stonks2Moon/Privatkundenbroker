@@ -16,7 +16,7 @@
 
 ### Vom Wertpapiermarkt
 * Abruf des Status (ist die "Unterbrechungsmöglichkeit" aktiviert?)
-* Abrufen der verfügbaren Wertpapieren inkl. Informationen (Referenzpreis, usw.)
+* Abrufen der verfügbaren Wertpapiere inkl. Informationen (Referenzpreis, usw.)
 * Schnittstelle für Absetzen von (Verkaufs-/Kaufs-)order
 * Abruf der Liste aller Order
 * Abruf des Status eines Orders
