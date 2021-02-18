@@ -5,8 +5,8 @@
 ### Must have:
 * Bietet Tradingmöglichkeiten
 * Bietet eine Kundenplattform
-* Kontostand
-* Depotstand
+  * Kontostand
+  * Depotstand
 * Stellt Rechnungen an Kunden
 ### Nice to have:
 * Auswertungen in Statistiken für Kunden
