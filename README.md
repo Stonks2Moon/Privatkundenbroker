@@ -30,3 +30,6 @@ Vue.js
 Nest.JS
 
 MariaDB als die Datenbank
+
+#### ERM Diagramm
+![ERM Diagramm](https://github.com/Stonks2Moon/Privatkundenbroker/blob/main/ERM-Diagramm.png)
