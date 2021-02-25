@@ -28,3 +28,5 @@ Vue.js
 
 ### Backend
 Nest.JS
+
+MariaDB für die Datenbank
