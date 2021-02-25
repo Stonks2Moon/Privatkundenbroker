@@ -20,3 +20,11 @@
 * Schnittstelle für Absetzen von (Verkaufs-/Kaufs-)order
 * Abruf der Liste aller Order
 * Abruf des Status eines Orders
+
+## Technologien
+
+### Frontend
+Vue.js
+
+### Backend
+Nest.JS
