@@ -46,7 +46,7 @@ Aufbauend zu Vue.js wurde auf Quasar gesetzt. Quasar stellt ein Vue.js unterstü
 
 # Backend
 
-Es wird die Module-Komponente von NestJs zum Strukturieren der Anwendung verwendet. Diese bindet die Controller und Services ein. Die API-Anfragen werden von dem Controller entgegengenommen, der die Anfrage durch ein Aufteilen auf die Services abarbeitet. Die Funktionen der Services werden weiter untergliedert in Funktionen die von außen aufgerufen und Funktionen, die nur innerhalb des Services verwendet werden. Beim Bearbeiten der Anfragen wird sehr stark darauf geachtet, gängige Sicherheitskonzepte umzusetzen, um das Risiko für nicht autorisierte Zugriffe auf ein Minimum zu redizieren, da mit persönlichen und somit sensiblen Daten gearbeitet wird.
+Es wird die Module-Komponente von NestJs zum Strukturieren der Anwendung verwendet. Diese bindet die Controller und Services ein. Die API-Anfragen werden von dem Controller entgegengenommen, der die Anfrage durch ein Aufteilen auf die Services abarbeitet. Die Funktionen der Services werden weiter untergliedert in Funktionen die von außen aufgerufen und Funktionen, die nur innerhalb des Services verwendet werden. Beim Bearbeiten der Anfragen wird sehr stark darauf geachtet, gängige Sicherheitskonzepte umzusetzen, um das Risiko für nicht autorisierte Zugriffe auf ein Minimum zu reduzieren, da mit persönlichen und somit sensiblen Daten gearbeitet wird.
 
 Bei der Entwicklung der Service-Funktionen wird besonders darauf Wert gelegt, dass diese unabhängig von anderen Funktionen wiederverwendet werden können, indem Prinzipien wie Seperation of Concers, das Single Responsibility Principle und Don't Repeat Yourself verfolgt wurden. Dadurch können Duplikationen des Codes verhindert und die Wartbarkeit, sowie Lesbarkeit der Anwendung verbessert werden. Die Lesbarkeit wird weitergehend dadurch verbessert, dass weitere Clean Code Praktiken und Best Practices angewendet werden. So werden beispielsweise für die Bearbeitung von asynchronen Aufrufen Promises anstelle von Callbacks eingesetzt.
 
@@ -76,15 +76,15 @@ MariaDB ist ein bekanntes Datenbankmanagementsystem für relationale Datenbanken
 
 
 ## Aufbau der Datenbank
-Die entworfene Struktur der Datenbank untergliedert sich in 13 Enmtitäten mit Eigenschaften und Abhängigkeiten untereinander. Der vollständige Entwurf des Aufbaus der Datenbank ist auf dem folgenden Diagramm abgebildet:
+Die entworfene Struktur der Datenbank untergliedert sich in 13 Entitäten mit Eigenschaften und Abhängigkeiten untereinander. Der vollständige Entwurf des Aufbaus der Datenbank ist auf dem folgenden Diagramm abgebildet:
 
 ![ERM Diagramm](https://github.com/Stonks2Moon/Privatkundenbroker/blob/main/ERM-Diagramm.png)
 
 ## API Endpoints
-Unser Backend wird über eine REST-API angesteuert. So wird gewährleistet, dass die Anwendung durch beliebige User-Interfaces angesteuert werden kann. So wird ein Einsatz unserer Anwendung in einem professionellen Umfeld ermöglicht. Die Bezeichnungen der Endpoints wurde so gewählt, dass die Aufgaben dieser selbsterklärend sind. Ein ausführlichere Dokumentation der API wird über die im Folgenden beschriebene Swagger-Dokumentation bereitgestellt.
+Unser Backend wird über eine REST-API angesteuert. So wird gewährleistet, dass die Anwendung durch beliebige User-Interfaces angesteuert werden kann. Dadurch wird ein Einsatz unserer Anwendung in einem professionellen Umfeld ermöglicht. Die Bezeichnungen der Endpoints wurde so gewählt, dass die Aufgaben dieser selbsterklärend sind. Eine ausführlichere Dokumentation der API wird über die im Folgenden beschriebene Swagger-Dokumentation bereitgestellt.
 
 ### Auflistung aller Endpoints
-Es werden die aufgelisteten API-Endpoints implementiert. Weitere Informationen zu diesen und den verwendeten Parametern können der Swagger-Dokumenation entnommen werden.
+Es werden die aufgelisteten API-Endpoints implementiert. Weitere Informationen zu diesen und den verwendeten Parametern können der Swagger-Dokumentation entnommen werden.
 * /loginWithPassword (GET)
 * /loginWithPasswordHash (GET)
 * /registerUser (POST)
@@ -110,16 +110,16 @@ Es werden die aufgelisteten API-Endpoints implementiert. Weitere Informationen z
 * /webhook/onDelete (POST)
 
 ### Swagger-Dokumentation
-Um eine exzellente Dokumentation der API-Endpoints zu gewährleisten, wird eine Swagger-Dokumentation gepflegt. Diese enthält eine Auflistung aller Endpoints und hinterlegte Parameter mit Beispielwerten, die ein effizientes Testen der einzelnen Funktion erlauben. Die Swagger Dokumentation ist unter [diesem Link](https://privat.moonstonks.space/api/) erreichbar.
+Um eine exzellente Dokumentation der API-Endpoints zu gewährleisten, wird eine Swagger-Dokumentation gepflegt. Diese enthält eine Auflistung aller Endpoints und hinterlegte Parameter mit Beispielwerten, die ein effizientes Testen der einzelnen Funktion erlauben. Die Swagger-Dokumentation ist unter [diesem Link](https://privat.moonstonks.space/api/) erreichbar.
 
 ## Verschlüsselung und Sicherheit
-Für eine sichere, skalierbare Infrastruktur mit einer geschäftserprobten Ressourcenkontrolle und ein professionelles Netzwerkmanagement, werden Linuxcontainer (LXD), sowie eine interne Netzwerkkommunikation verwendet. Des Weiteren ist jegliche Kommunikation SSL-verschlüsselt.
+Für eine sichere, skalierbare Infrastruktur mit einer geschäftserprobten Ressourcenkontrolle und einem professionellem Netzwerkmanagement, werden Linuxcontainer (LXD), sowie eine interne Netzwerkkommunikation verwendet. Des Weiteren ist jegliche Kommunikation SSL-verschlüsselt.
 Ein weiteres Sicherheitsfeature ist, dass wichtige Informationen, wie z.B. Passwörter, ausschließlich gehashed gespeichert werden. Dies gilt sowohl für die Client- als auch für die Serverseite.
 Eine moderne und sichere Laufzeitumgebung wird sichergestellt, indem die Kombination aus NestJS und Typescript für das Schreiben des Codes eingesetzt werden.
 
 ## Kopplung und Kohäsion
 Bei der Entwicklung der Anwendung wird darauf geachtet, dass eine klare Abgrenzung zwischen Funktionen und Aufgabenbereichen der Anwendung entsteht. So wird die Anwendung nicht nur in ein vollständig abgekapseltes Front- und Backend unterteilt, sondern auch bei der Entwicklung darauf geachtet, Funktionen sehr universell zu entwickeln.
-Dies ermöglicht eine dynamische Skalierbarkeit und Erweiterbarkeit und ermöglicht einen professionellen und weiträumigen Einsatz der Anwendung. Des Weiteren wird auf eine geringe Kopplung und hohe Kohäsion geachtet, indem ähnliche Elemente möglicht nah zusammengelegt werden und verschiedene Module voneinander so unabhängig wie möglich sind.
+Dies ermöglicht eine dynamische Skalierbarkeit und Erweiterbarkeit und ermöglicht einen professionellen und weiträumigen Einsatz der Anwendung. Des Weiteren wird auf eine geringe Kopplung und hohe Kohäsion geachtet, indem ähnliche Elemente möglichst nah zusammengelegt werden und verschiedene Module voneinander so unabhängig wie möglich sind.
 
 ## Skalierbarkeit
 Die Anwendung wird so konzipiert, dass sie auch bei schwankenden Rahmenbedingungen uneingeschränkt einsetzbar ist.
