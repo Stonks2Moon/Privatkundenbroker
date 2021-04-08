@@ -64,9 +64,7 @@ NestJS ist ein weit verbreitetes Node.js-Framework, das verwendet werden kann, u
 * Open Source
 * Damit einhergehend auch eine große Community, die Antworten zu möglichen Fragen bietet
 * Typisierung durch die Unterstützung von Typescript
-* MariaDB als die Datenbank
-
-### Swagger Dokumentation
+* NestJS unterstützt eine Dokumentation der Endpoints mit Swagger
 
 ### MariaDB
 MariaDB ist ein bekanntes Datenbankmanagementsystem für relationale Datenbanken, das als Fork der Datenbanksoftware "MySQL" entstand. Besonders die folgenden Aspekte führten zum Einsatz von MariaDB im Rahmen dieses Projekts:
@@ -83,7 +81,36 @@ Die entworfene Struktur der Datenbank untergliedert sich in 13 Enmtitäten mit E
 ![ERM Diagramm](https://github.com/Stonks2Moon/Privatkundenbroker/blob/main/ERM-Diagramm.png)
 
 ## API Endpoints
-Unser Backend wird über eine REST-API angesteuert. So wird gewährleistet, dass die Anwendung durch beliebige User-Interfaces angesteuert werden kann. So wird ein Einsatz unserer Anwendung in einem professionellen Umfeld ermöglicht. Ein ausführlichere Dokumentation der API wird über die bereits beschriebene Swagger-Dokumentation bereit gestellt.
+Unser Backend wird über eine REST-API angesteuert. So wird gewährleistet, dass die Anwendung durch beliebige User-Interfaces angesteuert werden kann. So wird ein Einsatz unserer Anwendung in einem professionellen Umfeld ermöglicht. Die Bezeichnungen der Endpoints wurde so gewählt, dass die Aufgaben dieser selbsterklärend sind. Ein ausführlichere Dokumentation der API wird über die im Folgenden beschriebene Swagger-Dokumentation bereitgestellt.
+
+### Auflistung aller Endpoints
+Es werden die aufgelisteten API-Endpoints implementiert. Weitere Informationen zu diesen und den verwendeten Parametern können der Swagger-Dokumenation entnommen werden.
+* /loginWithPassword (GET)
+* /loginWithPasswordHash (GET)
+* /registerUser (POST)
+* /updateAdressDataOfUser (PUT)
+* /updatePasswordOfUser (PUT)
+* /getBalanceAndLastTransactionsOfVerrechnungskonto (GET)
+* /initiateAuszahlung (POST)
+* /createTransactionAsAdmin (POST)
+* /getAllShares (GET)
+* /getShare (GET)
+* /getPriceOfShare (GET)
+* /getPriceDevelopmentOfShare (GET)
+* /getDepotValues (GET)
+* /buyOrder (POST)
+* /sellOrder (POST)
+* /deleteOrder (DELETE)
+* /getOrders (GET)
+* /checkIfMarketIsOpen (GET)
+* /getInvoices (GET)
+* /webhook/onPlace (POST)
+* /webhook/onMatch (POST)
+* /webhook/onComplete (POST)
+* /webhook/onDelete (POST)
+
+### Swagger-Dokumentation
+Um eine exzellente Dokumentation der API-Endpoints zu gewährleisten, wird eine Swagger-Dokumentation gepflegt. Diese enthält eine Auflistung aller Endpoints und hinterlegte Parameter mit Beispielwerten, die ein effizientes Testen der einzelnen Funktion erlauben. Die Swagger Dokumentation ist unter [diesem Link](https://privat.moonstonks.space/api/) erreichbar.
 
 ## Verschlüsselung und Sicherheit
 Für eine sichere, skalierbare Infrastruktur mit einer geschäftserprobten Ressourcenkontrolle und ein professionelles Netzwerkmanagement, werden Linuxcontainer (LXD), sowie eine interne Netzwerkkommunikation verwendet. Des Weiteren ist jegliche Kommunikation SSL-verschlüsselt.
